@@ -9,8 +9,8 @@ module SessionsHelper
   # Remembers a user in a persistent session.
   def remember(user)
     user.remember
-    cookies.permanent.signed(:user_id) = user.id
-    cookies.permanent.signed(:remember_token) = user.remember_token
+    cookies.permanent.signed[:user_id] = user.id
+    cookies.permanent.signed[:remember_token] = user.remember_token
   end
 
   # Create and return currently logged in user (if any) as @current_user.
